@@ -1,0 +1,25 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { colors, cvaColor } from "../../colors";
+---
+
+<Layout title="Welcome to Astro.">
+  <main class="text-white">
+    <h1 class="text-responsive-title text-slate-50 pb-6">Pick a color to compare</h1>
+    <ul role="list" class="grid grid-cols-responsive-md gap-4">
+      {
+        colors.map(color => (
+          <li
+            class={
+              cvaColor({ p3: color }) + " w-full h-full rounded-xl p-4 hover:outline outline-2 hover:shadow-xl"
+            }
+          >
+            <a href={`/colors/${color}`}>
+              <h2 class="font-black w-min px-1 rounded bg-white text-slate-800">{color.toUpperCase()}</h2>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</Layout>
