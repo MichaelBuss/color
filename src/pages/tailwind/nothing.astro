@@ -1,13 +1,15 @@
 ---
 import TailwindLayout from "../../layouts/TailwindLayout.astro";
 import Button from "../../components/ButtonNothing.astro";
+import ClassList from "../../components/ClassList.astro";
 
 // className="bg-pink-500" <-- Works
 // className="bg-blue-500" <-- Doesn't work
 ---
 
 <TailwindLayout heading="No Tooling">
-  <div class="grid place-items-center">
-    <Button>The button</Button>
+  <div class="grid place-items-center gap-4">
+    <Button id="nothingButton">The button</Button>
+    <ClassList id="nothingButton" />
   </div>
 </TailwindLayout>

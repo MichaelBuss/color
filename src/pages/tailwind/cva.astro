@@ -1,6 +1,7 @@
 ---
 import TailwindLayout from "../../layouts/TailwindLayout.astro";
 import Button from "../../components/ButtonCVA.astro";
+import ClassList from "../../components/ClassList.astro";
 
 // className="bg-pink-500" <-- Works
 // className="bg-blue-500" <-- Doesn't work
@@ -8,6 +9,7 @@ import Button from "../../components/ButtonCVA.astro";
 
 <TailwindLayout heading="Class Variance Authority">
   <div class="grid place-items-center">
-    <Button className="bg-blue-500">The button</Button>
+    <Button id="cvaButton" className="bg-blue-500">The button</Button>
+    <ClassList id="cvaButton" />
   </div>
 </TailwindLayout>
