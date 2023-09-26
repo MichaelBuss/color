@@ -1,0 +1,23 @@
+---
+import TailwindLayout from "../../layouts/TailwindLayout.astro";
+import Card from "../../components/Card.astro";
+---
+
+<TailwindLayout heading="Tailwind & CVA" showBackButton={false}>
+  <ul role="list" class="link-card-grid">
+    <Card href="/tailwind/nothing" title="No tools" body="Using Tailwind with no other tools." />
+    <Card href="/tailwind/cva" title="CVA" body="Enhanced with Class Variance Authority." />
+    <Card href="/tailwind/twmerge" title="twMerge" body="Addint twMerge to the mix!" />
+    <Card href="/tailwind/advanced" title="Advanced usage" body="Showing more features of CVA and twMerge" />
+  </ul>
+</TailwindLayout>
+
+<style>
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(12ch, 15ch));
+    gap: 2rem;
+    padding: 0;
+  }
+</style>

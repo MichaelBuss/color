@@ -1,0 +1,31 @@
+---
+import TailwindLayout from "../../layouts/TailwindLayout.astro";
+import Button from "../../components/ButtonAdvanced.astro";
+---
+
+<TailwindLayout heading="Advanced">
+  <div class="grid grid-cols-[min-content,auto,auto] h-min gap-4">
+    <p></p><p>Enabled</p><p>Disabled</p>
+    <p>solid</p>
+    <Button style="solid" variant="primary">The button</Button>
+    <Button style="solid" variant="primary" disabled>The button</Button>
+    <p>transparent</p>
+    <Button style="transparent" variant="primary">The button</Button>
+    <Button style="transparent" variant="primary" disabled>The button</Button>
+    <p>solid</p>
+    <Button style="solid" variant="secondary">The button</Button>
+    <Button style="solid" variant="secondary" disabled>The button</Button>
+    <p>transparent</p>
+    <Button style="transparent" variant="secondary">The button</Button>
+    <Button style="transparent" variant="secondary" disabled>The button</Button>
+  </div>
+</TailwindLayout>
+
+<style>
+  p {
+    text-transform: capitalize;
+    font-weight: 600;
+    display: grid;
+    place-items: center;
+  }
+</style>
