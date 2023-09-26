@@ -3,5 +3,6 @@
     ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
     ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
   ],
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "cSpell.words": ["Trackunit"]
 }
