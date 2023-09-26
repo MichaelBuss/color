@@ -9,6 +9,7 @@ import colorSpaces from "../../images/color-spaces.png";
 import colorFunctionsSrgb from "../../images/color-funcitons-srgb.png";
 import colorFunctionsAny from "../../images/color-functions-any.png";
 import colorFunctionsAny2 from "../../images/color-functions-any-2.png";
+import colorFunctionsAny3 from "../../images/color-functions-any-3.png";
 
 const cvaCornerLabel = cva({
   base: ["absolute", "font-bold", "text-white", "text-xl"],
@@ -26,16 +27,50 @@ const cvaCornerLabel = cva({
 <Layout title="Code Tracks – Colors">
   <main class="text-white">
     <ul class="snap-y overflow-y-auto flex flex-col snap-mandatory w-full h-screen gap-2">
-      <Slide gradient="blue-to-teal">
+      <Slide gradient="deep-cyan-to-navy-blue">
         <p class="text-responsive-title-xs font-bold uppercase">Trackunit Code Tracks Autumn 2023</p>
-        <h1 class="text-responsive-title-xl font-bold uppercase">Spacey colors and color spaces</h1>
-        <h2 class="text-responsive-title-sm text-slate-900 fint-bold">New and better ways to define CSS colors</h2>
+        <h1 class="text-responsive-title-xl font-bold uppercase">Spacey colors & color spaces</h1>
+        <h2 class="text-responsive-title-sm fint-bold bg-slate-900 px-3 rounded-xl w-fit">
+          New and better ways to define CSS colors
+        </h2>
       </Slide>
-      <Slide gradient="indigo-to-purple">
+      <Slide>
         <h1 class="text-responsive-title-sm font-bold uppercase">Make em pop 🍿</h1>
         <div class="grid place-items-center h-full">
           <Image class="rounded-xl" width={800} src={colorSpaces} alt="A bird sitting on a nest of eggs." />
         </div>
+        <p class={cvaCornerLabel({ corner: "lower-left" })}>
+          Image:
+          https://www.androidpolice.com/2019/06/24/google-camera-takes-page-from-iphone-playbook-preps-wide-gamut-imaging-maybe-to-debut-on-pixel-4/
+        </p>
+      </Slide>
+      <Slide>
+        <h1 class="text-responsive-title-sm font-bold uppercase">DefDefining colors in the sRGB color gamut</h1>
+        <div class="grid place-items-center h-full">
+          <Image class="rounded-xl" width={800} src={colorFunctionsSrgb} alt="" />
+        </div>
+        <p class={cvaCornerLabel({ corner: "lower-left" })}>Source: What’s new in CSS WWDC2023</p>
+      </Slide>
+      <Slide>
+        <h1 class="text-responsive-title-sm font-bold uppercase">Defining colors in any color gamut</h1>
+        <div class="grid place-items-center h-full">
+          <Image class="rounded-xl" width={800} src={colorFunctionsAny} alt="" />
+        </div>
+        <p class={cvaCornerLabel({ corner: "lower-left" })}>Source: What’s new in CSS WWDC2023</p>
+      </Slide>
+      <Slide>
+        <h1 class="text-responsive-title-sm font-bold uppercase">Defining colors in any color gamut</h1>
+        <div class="grid place-items-center h-full">
+          <Image class="rounded-xl" width={800} src={colorFunctionsAny2} alt="" />
+        </div>
+        <p class={cvaCornerLabel({ corner: "lower-left" })}>Source: What’s new in CSS WWDC2023</p>
+      </Slide>
+      <Slide>
+        <h1 class="text-responsive-title-sm font-bold uppercase">Defining colors in any color gamut</h1>
+        <div class="grid place-items-center h-full">
+          <Image class="rounded-xl" width={800} src={colorFunctionsAny3} alt="" />
+        </div>
+        <p class={cvaCornerLabel({ corner: "lower-left" })}>Source: What’s new in CSS WWDC2023</p>
       </Slide>
       <li class="min-w-full min-h-full snap-center relative bg-slate-300">
         <ul class="snap-x overflow-x-auto flex snap-mandatory w-full h-full gap-2">
@@ -55,24 +90,67 @@ const cvaCornerLabel = cva({
         <p class={cvaCornerLabel({ corner: "lower-left" })}>sRGB</p>
         <p class={cvaCornerLabel({ corner: "lower-right" })}>P3</p>
       </li>
-      <Slide gradient="lime-to-green">
-        <h1 class="text-responsive-title-sm font-bold uppercase">DefDefining colors in the sRGB color gamut</h1>
-        <div class="grid place-items-center h-full">
-          <Image class="rounded-xl" width={800} src={colorFunctionsSrgb} alt="" />
+      <Slide>
+        <h1 class="text-responsive-title-sm font-bold uppercase">Gradients in various color gamuts</h1>
+        <div class="grid place-items-center gap-4 h-full">
+          <div class="text-3xl w-2/3 grid grid-rows-fr-min items-center">
+            <div class="bgGradientSrgb w-full h-20 rounded-full"></div>
+            <p>srgb</p>
+          </div>
+          <div class="text-3xl w-2/3 grid grid-rows-fr-min items-center">
+            <div class="bgGradientSrgbLinear w-full h-20 rounded-full"></div>
+            <p>srgb linear</p>
+          </div>
+          <div class="text-3xl w-2/3 grid grid-rows-fr-min items-center">
+            <div class="bgGradientLab w-full h-20 rounded-full"></div>
+            <p>lab</p>
+          </div>
+          <div class="text-3xl w-2/3 grid grid-rows-fr-min items-center">
+            <div class="bgGradientOkLab w-full h-20 rounded-full"></div>
+            <p>oklab</p>
+          </div>
+          <div class="text-3xl w-2/3 grid grid-rows-fr-min items-center">
+            <div class="bgGradientLch w-full h-20 rounded-full"></div>
+            <p>lch</p>
+          </div>
+          <div class="text-3xl w-2/3 grid grid-rows-fr-min items-center">
+            <div class="bgGradientOkLch w-full h-20 rounded-full"></div>
+            <p>oklch</p>
+          </div>
         </div>
       </Slide>
-      <Slide gradient="rose-to-amber">
-        <h1 class="text-responsive-title-sm font-bold uppercase">Defining colors in any color gamut</h1>
-        <div class="grid place-items-center h-full">
-          <Image class="rounded-xl" width={800} src={colorFunctionsAny} alt="" />
-        </div>
-      </Slide>
-      <Slide gradient="rose-to-amber">
-        <h1 class="text-responsive-title-sm font-bold uppercase">Defining colors in any color gamut</h1>
-        <div class="grid place-items-center h-full">
-          <Image class="rounded-xl" width={800} src={colorFunctionsAny2} alt="" />
+      <Slide gradient="moss-green-to-dark-forest-green" class="text-4xl">
+        <h1 class="text-responsive-title-sm font-bold uppercase">More thoughts on colors</h1>
+        <div class="m-auto h-full w-2/3 grid items-center">
+          <ul class="list-disc">
+            <li>Mixing colors</li>
+            <li>Generate color palettes</li>
+            <li>Design tools</li>
+            <li>Fallbacks</li>
+          </ul>
         </div>
       </Slide>
     </ul>
   </main>
+
+  <style>
+    .bgGradientSrgb {
+      background: linear-gradient(in srgb to right, white, blue);
+    }
+    .bgGradientSrgbLinear {
+      background: linear-gradient(in srgb-linear to right, white, blue);
+    }
+    .bgGradientLab {
+      background: linear-gradient(in lab to right, white, blue);
+    }
+    .bgGradientOkLab {
+      background: linear-gradient(in oklab to right, white, blue);
+    }
+    .bgGradientLch {
+      background: linear-gradient(in lch to right, white, blue);
+    }
+    .bgGradientOkLch {
+      background: linear-gradient(in oklch to right, white, blue);
+    }
+  </style>
 </Layout>
