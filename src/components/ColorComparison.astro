@@ -1,4 +1,5 @@
 ---
+import { cva } from "../../cva.config";
 import { type Color, cvaColor } from "../colors";
 
 interface Props {
@@ -6,6 +7,18 @@ interface Props {
 }
 
 const { color } = Astro.props;
+
+const cvaCornerLabel = cva({
+  base: ["absolute", "font-bold", "text-white", "text-xl"],
+  variants: {
+    corner: {
+      "lower-left": "left-4 bottom-4",
+      "lower-right": "right-4 bottom-4",
+      "upper-left": "left-4 top-4",
+      "upper-right": "right-4 top-4",
+    },
+  },
+});
 ---
 
 <div class="grid grid-cols-2 w-screen h-screen">
@@ -14,8 +27,8 @@ const { color } = Astro.props;
   >
     {color}
   </h1>
-  <p class="absolute text-white text-xl left-4 bottom-4">sRGB</p>
-  <p class="absolute text-white text-xl right-4 bottom-4">P3</p>
-  <div class={cvaColor({ srgb: color }) + " w-full h-full"}></div>
-  <div class={cvaColor({ p3: color }) + " w-full h-full"}></div>
+  <p class={cvaCornerLabel({ corner: "lower-left" })}>sRGB</p>
+  <p class={cvaCornerLabel({ corner: "lower-right" })}>P3</p>
+  <div class={cvaColor({ srgb: color, class: "w-full h-full" })}></div>
+  <div class={cvaColor({ p3: color, class: "w-full h-full" })}></div>
 </div>
