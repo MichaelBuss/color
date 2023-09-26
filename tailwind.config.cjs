@@ -11,7 +11,7 @@ module.exports = {
 			fontSize: {
 				"responsive-title-xs": "clamp(0.5rem, 1vw, 4rem)",
 				"responsive-title-sm": "clamp(1rem, 2vw, 6rem)",
-				"responsive-title-md": "clamp(1.5rem, 4vw, 8rem)",
+				"responsive-title-md": "clamp(1.5rem, 3vw, 7rem)",
 				"responsive-title-lg": "clamp(2rem, 6vw, 10rem)",
 				"responsive-title-xl": "clamp(2.5rem, 8vw, 12rem)",
 				"responsive-title-2xl": "clamp(3rem, 10vw, 14rem)",
