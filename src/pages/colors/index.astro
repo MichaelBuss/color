@@ -29,7 +29,7 @@ const cvaCornerLabel = cva({
     <ul class="snap-y overflow-y-auto flex flex-col snap-mandatory w-full h-screen gap-2">
       <Slide gradient="deep-cyan-to-navy-blue">
         <p class="text-responsive-title-xs font-bold uppercase">Trackunit Code Tracks Autumn 2023</p>
-        <h1 class="text-responsive-title-xl font-bold uppercase">Spacey colors & color spaces</h1>
+        <h1 class="text-responsive-title-xl font-bold uppercase">Spacey colors & color spaces 🌈</h1>
         <h2 class="text-responsive-title-sm fint-bold bg-slate-900 px-3 rounded-xl w-fit">
           New and better ways to define CSS colors
         </h2>
@@ -45,28 +45,28 @@ const cvaCornerLabel = cva({
         </p>
       </Slide>
       <Slide>
-        <h1 class="text-responsive-title-sm font-bold uppercase">DefDefining colors in the sRGB color gamut</h1>
+        <h1 class="text-responsive-title-sm font-bold uppercase">Defining colors in the sRGB color gamut 🧹</h1>
         <div class="grid place-items-center h-full">
           <Image class="rounded-xl" width={800} src={colorFunctionsSrgb} alt="" />
         </div>
         <p class={cvaCornerLabel({ corner: "lower-left" })}>Source: What’s new in CSS WWDC2023</p>
       </Slide>
       <Slide>
-        <h1 class="text-responsive-title-sm font-bold uppercase">Defining colors in any color gamut</h1>
+        <h1 class="text-responsive-title-sm font-bold uppercase">Defining colors in any color gamut 🎨</h1>
         <div class="grid place-items-center h-full">
           <Image class="rounded-xl" width={800} src={colorFunctionsAny} alt="" />
         </div>
         <p class={cvaCornerLabel({ corner: "lower-left" })}>Source: What’s new in CSS WWDC2023</p>
       </Slide>
       <Slide>
-        <h1 class="text-responsive-title-sm font-bold uppercase">Defining colors in any color gamut</h1>
+        <h1 class="text-responsive-title-sm font-bold uppercase">Defining colors in any color gamut 🎨</h1>
         <div class="grid place-items-center h-full">
           <Image class="rounded-xl" width={800} src={colorFunctionsAny2} alt="" />
         </div>
         <p class={cvaCornerLabel({ corner: "lower-left" })}>Source: What’s new in CSS WWDC2023</p>
       </Slide>
       <Slide>
-        <h1 class="text-responsive-title-sm font-bold uppercase">Defining colors in any color gamut</h1>
+        <h1 class="text-responsive-title-sm font-bold uppercase">Defining colors in any color gamut 🎨</h1>
         <div class="grid place-items-center h-full">
           <Image class="rounded-xl" width={800} src={colorFunctionsAny3} alt="" />
         </div>
@@ -91,42 +91,43 @@ const cvaCornerLabel = cva({
         <p class={cvaCornerLabel({ corner: "lower-right" })}>P3</p>
       </li>
       <Slide>
-        <h1 class="text-responsive-title-sm font-bold uppercase">Gradients in various color gamuts</h1>
-        <div class="grid place-items-center gap-4 h-full">
+        <h1 class="text-responsive-title-sm font-bold uppercase">Gradients in various color gamuts 🦋</h1>
+        <div class="grid pt-6 place-items-center gap-4">
           <div class="text-3xl w-2/3 grid grid-rows-fr-min items-center">
             <div class="bgGradientSrgb w-full h-20 rounded-full"></div>
-            <p>srgb</p>
+            <p class="pl-6">srgb</p>
           </div>
           <div class="text-3xl w-2/3 grid grid-rows-fr-min items-center">
             <div class="bgGradientSrgbLinear w-full h-20 rounded-full"></div>
-            <p>srgb linear</p>
+            <p class="pl-6">srgb linear</p>
           </div>
           <div class="text-3xl w-2/3 grid grid-rows-fr-min items-center">
             <div class="bgGradientLab w-full h-20 rounded-full"></div>
-            <p>lab</p>
+            <p class="pl-6">lab</p>
           </div>
           <div class="text-3xl w-2/3 grid grid-rows-fr-min items-center">
             <div class="bgGradientOkLab w-full h-20 rounded-full"></div>
-            <p>oklab</p>
+            <p class="pl-6">oklab</p>
           </div>
           <div class="text-3xl w-2/3 grid grid-rows-fr-min items-center">
             <div class="bgGradientLch w-full h-20 rounded-full"></div>
-            <p>lch</p>
+            <p class="pl-6">lch</p>
           </div>
           <div class="text-3xl w-2/3 grid grid-rows-fr-min items-center">
             <div class="bgGradientOkLch w-full h-20 rounded-full"></div>
-            <p>oklch</p>
+            <p class="pl-6">oklch</p>
           </div>
         </div>
       </Slide>
       <Slide gradient="moss-green-to-dark-forest-green" class="text-4xl">
-        <h1 class="text-responsive-title-sm font-bold uppercase">More thoughts on colors</h1>
+        <h1 class="text-responsive-title-sm font-bold uppercase">More thoughts on colors 🧠</h1>
         <div class="m-auto h-full w-2/3 grid items-center">
-          <ul class="list-disc">
+          <ul class="list-disc grid gap-2">
             <li>Mixing colors</li>
             <li>Generate color palettes</li>
-            <li>Design tools</li>
-            <li>Fallbacks</li>
+            <li>Design tools support</li>
+            <li>Fallback strategies</li>
+            <li><a href="https://oklch.com/">oklch.com 👉</a></li>
           </ul>
         </div>
       </Slide>
