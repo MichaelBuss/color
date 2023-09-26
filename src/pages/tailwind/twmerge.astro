@@ -1,6 +1,7 @@
 ---
 import TailwindLayout from "../../layouts/TailwindLayout.astro";
 import Button from "../../components/ButtonCVAtwMerge.astro";
+import ClassList from "../../components/ClassList.astro";
 
 // className="bg-pink-500" <-- Works
 // className="bg-blue-500" <-- Works
@@ -8,6 +9,7 @@ import Button from "../../components/ButtonCVAtwMerge.astro";
 
 <TailwindLayout heading="twMerge">
   <div class="grid place-items-center">
-    <Button>The button</Button>
+    <Button id="twMergeButton">The button</Button>
+    <ClassList id="twMergeButton" />
   </div>
 </TailwindLayout>

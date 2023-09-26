@@ -2,12 +2,14 @@
 interface Props {
   variant?: "primary" | "secondary";
   className?: string;
+  id?: string;
 }
 
-const { variant = "secondary", className } = Astro.props;
+const { variant = "secondary", className, id } = Astro.props;
 ---
 
 <button
+  id={id}
   class={`
     cursor-pointer border rounded-md px-4 py-2 m-2 transition duration-500 ease select-none focus:outline-none focus:shadow-outline ${
       variant === "primary"

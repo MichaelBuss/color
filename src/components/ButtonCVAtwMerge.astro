@@ -4,6 +4,7 @@ import { cva } from "../../cva.config";
 interface Props {
   variant?: "primary" | "secondary";
   className?: string;
+  id?: string;
 }
 
 const cvaButton = cva({
@@ -32,7 +33,7 @@ const cvaButton = cva({
   },
 });
 
-const { variant = "secondary", className } = Astro.props;
+const { variant = "secondary", className, id } = Astro.props;
 ---
 
-<button class={cvaButton({ variant, className })}><slot /></button>
+<button id={id} class={cvaButton({ variant, className })}><slot /></button>

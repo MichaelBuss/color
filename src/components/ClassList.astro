@@ -1,0 +1,22 @@
+---
+interface Props {
+  id?: string;
+}
+
+const { id } = Astro.props;
+---
+
+<script>
+  const classlist = document.getElementById("classlist");
+  const id = classlist?.dataset?.id;
+  if (id) {
+    const classes = document.getElementById(id)?.classList?.toString();
+    if (classlist) {
+      classlist.innerText = classes?.replaceAll(" ", "\n")?.trim() ?? "";
+    }
+  }
+</script>
+
+<code class="rounded-xl p-4 bg-slate-800 transition-transform duration-700 hover:bg-slate-600 hover:shadow-xl">
+  <pre id="classlist" data-id={id}></pre>
+</code>
