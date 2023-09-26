@@ -1,0 +1,17 @@
+---
+interface Props {
+  variant?: "primary" | "secondary";
+  className?: string;
+}
+
+const { variant = "primary", className } = Astro.props;
+---
+
+<button
+  class={`
+    cursor-pointer border rounded-md px-4 py-2 m-2 transition duration-500 ease select-none focus:outline-none focus:shadow-outline ${
+      variant === "primary"
+        ? "border-purple-500 bg-purple-500 text-white hover:bg-purple-600"
+        : "border-gray-500 bg-gray-500 text-white hover:bg-gray-600"
+    } ${className ? className : ""}`}><slot /></button
+>
