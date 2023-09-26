@@ -1,8 +1,8 @@
-import { cva } from "class-variance-authority";
+import { cx, cva } from "../cva.config";
 export const colors = ["red", "blue", "green", "yellow", "purple", "pink"] as const;
 export type Color = (typeof colors)[number];
 
-export const cvaColor = cva([], {
+export const cvaColor = cva({
   variants: {
     srgb: {
       red: "bg-srgb-red",
