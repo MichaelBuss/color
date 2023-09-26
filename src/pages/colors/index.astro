@@ -1,25 +1,80 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { colors, cvaColor } from "../../colors";
+import ColorComparison from "../../components/ColorComparison.astro";
+import Slide from "../../components/Slide.astro";
+import { cva } from "../../../cva.config";
+import { Image } from "astro:assets";
+import colorSpaces from "../../images/color-spaces.png";
+import colorFunctionsSrgb from "../../images/color-funcitons-srgb.png";
+import colorFunctionsAny from "../../images/color-functions-any.png";
+import colorFunctionsAny2 from "../../images/color-functions-any-2.png";
+
+const cvaCornerLabel = cva({
+  base: ["absolute", "font-bold", "text-white", "text-xl"],
+  variants: {
+    corner: {
+      "lower-left": "left-6 bottom-6",
+      "lower-right": "right-6 bottom-6",
+      "upper-left": "left-6 top-6",
+      "upper-right": "right-6 top-6",
+    },
+  },
+});
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Code Tracks – Colors">
   <main class="text-white">
-    <h1 class="text-responsive-title text-slate-50 pb-6">Pick a color to compare</h1>
-    <ul role="list" class="grid grid-cols-responsive-md gap-4">
-      {
-        colors.map(color => (
-          <li
-            class={
-              cvaColor({ p3: color }) + " w-full h-full rounded-xl p-4 hover:outline outline-2 hover:shadow-xl"
-            }
-          >
-            <a href={`/colors/${color}`}>
-              <h2 class="font-black w-min px-1 rounded bg-white text-slate-800">{color.toUpperCase()}</h2>
-            </a>
-          </li>
-        ))
-      }
+    <ul class="snap-y overflow-y-auto flex flex-col snap-mandatory w-full h-screen gap-2">
+      <Slide gradient="blue-to-teal">
+        <p class="text-responsive-title-xs font-bold uppercase">Trackunit Code Tracks Autumn 2023</p>
+        <h1 class="text-responsive-title-xl font-bold uppercase">Spacey colors and color spaces</h1>
+        <h2 class="text-responsive-title-sm text-slate-900 fint-bold">New and better ways to define CSS colors</h2>
+      </Slide>
+      <Slide gradient="indigo-to-purple">
+        <h1 class="text-responsive-title-sm font-bold uppercase">Make em pop 🍿</h1>
+        <div class="grid place-items-center h-full">
+          <Image class="rounded-xl" width={800} src={colorSpaces} alt="A bird sitting on a nest of eggs." />
+        </div>
+      </Slide>
+      <li class="min-w-full min-h-full snap-center relative bg-slate-300">
+        <ul class="snap-x overflow-x-auto flex snap-mandatory w-full h-full gap-2">
+          {
+            colors.map(color => (
+              <li
+                class={cvaColor({
+                  p3: color,
+                  class: ["min-w-full", "min-h-full", "snap-center", "relative"],
+                })}
+              >
+                <a href={`/colors/${color}`}>
+                  <ColorComparison color={color} />
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+        <p class={cvaCornerLabel({ corner: "lower-left" })}>sRGB</p>
+        <p class={cvaCornerLabel({ corner: "lower-right" })}>P3</p>
+      </li>
+      <Slide gradient="lime-to-green">
+        <h1 class="text-responsive-title-sm font-bold uppercase">DefDefining colors in the sRGB color gamut</h1>
+        <div class="grid place-items-center h-full">
+          <Image class="rounded-xl" width={800} src={colorFunctionsSrgb} alt="" />
+        </div>
+      </Slide>
+      <Slide gradient="rose-to-amber">
+        <h1 class="text-responsive-title-sm font-bold uppercase">Defining colors in any color gamut</h1>
+        <div class="grid place-items-center h-full">
+          <Image class="rounded-xl" width={800} src={colorFunctionsAny} alt="" />
+        </div>
+      </Slide>
+      <Slide gradient="rose-to-amber">
+        <h1 class="text-responsive-title-sm font-bold uppercase">Defining colors in any color gamut</h1>
+        <div class="grid place-items-center h-full">
+          <Image class="rounded-xl" width={800} src={colorFunctionsAny2} alt="" />
+        </div>
+      </Slide>
     </ul>
   </main>
 </Layout>

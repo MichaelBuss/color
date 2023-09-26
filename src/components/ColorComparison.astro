@@ -1,34 +1,23 @@
 ---
-import { cva } from "../../cva.config";
+import { twMerge } from "tailwind-merge";
+
 import { type Color, cvaColor } from "../colors";
 
 interface Props {
   color: Color;
+  class?: string;
 }
 
-const { color } = Astro.props;
-
-const cvaCornerLabel = cva({
-  base: ["absolute", "font-bold", "text-white", "text-xl"],
-  variants: {
-    corner: {
-      "lower-left": "left-4 bottom-4",
-      "lower-right": "right-4 bottom-4",
-      "upper-left": "left-4 top-4",
-      "upper-right": "right-4 top-4",
-    },
-  },
-});
+const { color, class: className } = Astro.props;
 ---
 
-<div class="grid grid-cols-2 w-screen h-screen">
+<div class={twMerge("grid grid-cols-2 w-full h-full", className)}>
   <h1
-    class="text-9xl uppercase font-black w-min px-6 rounded-2xl bg-white text-slate-800 absolute top-1/2 left-1/2 text-center -translate-y-1/2 -translate-x-1/2"
+    class="text-responsive-title-2xl uppercase font-black w-min px-6 rounded-2xl bg-white text-slate-800 absolute top-1/2 left-1/2 text-center -translate-y-1/2 -translate-x-1/2"
   >
     {color}
   </h1>
-  <p class={cvaCornerLabel({ corner: "lower-left" })}>sRGB</p>
-  <p class={cvaCornerLabel({ corner: "lower-right" })}>P3</p>
+
   <div class={cvaColor({ srgb: color, class: "w-full h-full" })}></div>
   <div class={cvaColor({ p3: color, class: "w-full h-full" })}></div>
 </div>

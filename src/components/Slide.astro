@@ -1,0 +1,36 @@
+---
+import { cva } from "../../cva.config";
+import type { VariantProps } from "cva";
+
+interface Props extends VariantProps<typeof cvaSlide> {
+  class?: string;
+}
+
+const { class: className, gradient } = Astro.props;
+
+const cvaSlide = cva({
+  base: ["w-full", "min-h-full", "snap-center", "relative", "bg-gradient-to-b", "py-6", "px-12"],
+  variants: {
+    gradient: {
+      "purple-to-pink": "bg-gradient-to-b from-purple-500 to-pink-500",
+      "blue-to-teal": "bg-gradient-to-b from-blue-400 to-teal-500",
+      "green-to-yellow": "bg-gradient-to-b from-green-400 to-yellow-400",
+      "red-to-orange": "bg-gradient-to-b from-red-400 to-orange-400",
+      "indigo-to-purple": "bg-gradient-to-b from-indigo-400 to-purple-400",
+      "rose-to-amber": "bg-gradient-to-b from-rose-400 to-amber-400",
+      "cool-gray-to-gray": "bg-gradient-to-b from-cool-gray-400 to-gray-400",
+      "warm-gray-to-gray": "bg-gradient-to-b from-warm-gray-400 to-gray-400",
+      "cyan-to-blue": "bg-gradient-to-b from-cyan-400 to-blue-400",
+      "lime-to-green": "bg-gradient-to-b from-lime-400 to-green-400",
+      "yellow-to-orange": "bg-gradient-to-b from-yellow-400 to-orange-400",
+    },
+  },
+  defaultVariants: {
+    gradient: "cyan-to-blue",
+  },
+});
+---
+
+<div class={cvaSlide({ gradient, class: className })}>
+  <slot />
+</div>
