@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+import { colorVariants } from "./src/colorPalette";
 module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {

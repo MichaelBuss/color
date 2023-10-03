@@ -10,6 +10,7 @@ import colorFunctionsSrgb from "../../images/color-funcitons-srgb.png";
 import colorFunctionsAny from "../../images/color-functions-any.png";
 import colorFunctionsAny2 from "../../images/color-functions-any-2.png";
 import colorFunctionsAny3 from "../../images/color-functions-any-3.png";
+import { colorVariants, generateColors } from "../../colorPalette";
 
 const cvaCornerLabel = cva({
   base: ["absolute", "font-bold", "text-white", "text-xl"],
@@ -22,6 +23,7 @@ const cvaCornerLabel = cva({
     },
   },
 });
+console.log("👆", colorVariants);
 ---
 
 <Layout title="Code Tracks – Colors">
@@ -29,7 +31,7 @@ const cvaCornerLabel = cva({
     <ul class="snap-y overflow-y-auto flex flex-col snap-mandatory w-full h-screen gap-2">
       <Slide gradient="deep-cyan-to-navy-blue">
         <p class="text-responsive-title-xs font-bold uppercase">Trackunit Code Tracks Autumn 2023</p>
-        <h1 class="text-responsive-title-xl font-bold uppercase">Spacey colors & color spaces 🌈</h1>
+        <h1 class="text-responsive-title-xl font-bold uppercase">Spacey colors & color spaces 🚀</h1>
         <h2 class="text-responsive-title-sm fint-bold bg-slate-900 px-3 rounded-xl w-fit">
           New and better ways to define CSS colors
         </h2>
@@ -37,7 +39,7 @@ const cvaCornerLabel = cva({
       <Slide>
         <h1 class="text-responsive-title-sm font-bold uppercase">Make em pop 🍿</h1>
         <div class="grid place-items-center h-full">
-          <Image class="rounded-xl" width={800} src={colorSpaces} alt="A bird sitting on a nest of eggs." />
+          <Image class="rounded-xl" width={700} src={colorSpaces} alt="A bird sitting on a nest of eggs." />
         </div>
         <p class={cvaCornerLabel({ corner: "lower-left" })}>
           Image:
@@ -119,15 +121,25 @@ const cvaCornerLabel = cva({
           </div>
         </div>
       </Slide>
-      <Slide gradient="moss-green-to-dark-forest-green" class="text-4xl">
+      <Slide>
+        <h1 class="text-responsive-title-sm font-bold uppercase">Genetate a palette 🌈</h1>
+        <div class="grid grid-cols-12 pt-12">
+          {
+            generateColors({ baseColor: [75, 0.2, 180], numVariants: 12 }).map(variant => (
+              <div style={{ backgroundColor: variant }} class="w-12 h-12" />
+            ))
+          }
+        </div>
+      </Slide>
+      <Slide gradient="midnight-blue-to-purple" class="text-4xl">
         <h1 class="text-responsive-title-sm font-bold uppercase">More thoughts on colors 🧠</h1>
         <div class="m-auto h-full w-2/3 grid items-center">
           <ul class="list-disc grid gap-2">
             <li>Mixing colors</li>
-            <li>Generate color palettes</li>
             <li>Design tools support</li>
             <li>Fallback strategies</li>
-            <li><a href="https://oklch.com/">oklch.com 👉</a></li>
+            <li><a href="https://oklch.com/">Oklch playground 👉</a></li>
+            <li><a href="https://github.com/MichaelBuss/color">Today's color & cva repository 👉</a></li>
           </ul>
         </div>
       </Slide>
