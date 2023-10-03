@@ -10,7 +10,7 @@ import colorFunctionsSrgb from "../../images/color-funcitons-srgb.png";
 import colorFunctionsAny from "../../images/color-functions-any.png";
 import colorFunctionsAny2 from "../../images/color-functions-any-2.png";
 import colorFunctionsAny3 from "../../images/color-functions-any-3.png";
-import { colorVariants, generateColors } from "../../colorPalette";
+import { colorVariants, generateColors, colorNames } from "../../colorPalette";
 
 const cvaCornerLabel = cva({
   base: ["absolute", "font-bold", "text-white", "text-xl"],
@@ -122,11 +122,18 @@ console.log("👆", colorVariants);
         </div>
       </Slide>
       <Slide>
-        <h1 class="text-responsive-title-sm font-bold uppercase">Genetate a palette 🌈</h1>
-        <div class="grid grid-cols-12 pt-12">
+        <h1 class="text-responsive-title-sm font-bold uppercase pb-12">Genetate a palette 🌈</h1>
+        <div class="grid gap-2">
           {
-            generateColors({ baseColor: [75, 0.2, 180], numVariants: 12 }).map(variant => (
-              <div style={{ backgroundColor: variant }} class="w-12 h-12" />
+            colorNames.map((colorName, index) => (
+              <div class="grid grid-cols-7 gap-2">
+                <p class="w-96">{colorName}</p>
+                {generateColors({ baseColor: [75, 0.2, (360 / colorName.length) * index], numVariants: 6 }).map(
+                  variant => (
+                    <div style={{ backgroundColor: variant }} class="h-12" />
+                  )
+                )}
+              </div>
             ))
           }
         </div>

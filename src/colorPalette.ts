@@ -17,23 +17,23 @@ const baseColor: number[] = [75, 0.2, 180]; // Example base color
 
 // Get the number of colors
 
-const names = [
-  "Ruby Red",
-  "Sapphire Blue",
-  "Emerald Green",
-  "Amethyst Purple",
-  "Topaz Yellow",
-  "Coral Pink",
-  "Onyx Black",
-  "Ivory White",
-  "Turquoise Teal",
-  "Citrine Orange",
-  "Cobalt Violet",
-  "Garnet Maroon",
+export const colorNames = [
+  "Fiery Red",
+  "Sunset Orange",
+  "Golden Glow",
+  "Amber Radiance",
+  "Sunshine Yellow",
+  "Fresh Spring Green",
+  "Verdant Meadow",
+  "Aqua Blue",
+  "Skyward Horizon",
+  "Royal Blue",
+  "Regal Purple",
+  "Deep Crimson",
 ];
 
 // Generate color variations
-export const colorVariants = generateColors({ baseColor, numVariants: 12 });
+export const colorVariants = generateColors({ baseColor, numVariants: 6 });
 
 // interface IGenerateColors {
 //   names: string[];
