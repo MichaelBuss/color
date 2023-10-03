@@ -1,0 +1,72 @@
+---
+import { cva } from "../../cva.config";
+import type { VariantProps } from "cva";
+
+interface Props extends CVAProps {
+  className?: string;
+  // variant?: "primary" | "secondary";
+  // style?: "solid" | "transparent";
+  // disabled?: boolean;
+}
+
+type CVAProps = VariantProps<typeof cvaButton>;
+
+// const test: CVAProps = {};
+
+const cvaButton = cva({
+  base: [
+    "border",
+    "rounded-md",
+    "px-4",
+    "py-2",
+    "m-2",
+    "transition",
+    "duration-500",
+    "ease",
+    "select-none",
+    "focus:outline-none",
+    "focus:shadow-outline",
+    "cursor-pointer",
+  ],
+  variants: {
+    variant: {
+      primary: ["border-purple-500", "bg-purple-500", "text-white", "hover:bg-purple-600"],
+      secondary: ["border-gray-500", "bg-gray-500", "text-white", "hover:bg-gray-600"],
+    },
+    style: {
+      solid: [],
+      transparent: ["bg-transparent", "border-transparent", "font-bold", "uppercase", "hover:bg-opacity-20"],
+    },
+    disabled: {
+      true: ["opacity-60", "cursor-not-allowed"],
+    },
+  },
+  compoundVariants: [
+    {
+      variant: "primary",
+      style: "transparent",
+      class: ["text-purple-500"],
+    },
+    { variant: "secondary", style: "transparent", class: ["text-gray-500"] },
+    {
+      variant: "primary",
+      disabled: true,
+      class: ["hover:bg-purple-500"],
+    },
+    { variant: "secondary", disabled: true, class: ["hover:bg-gray-500"] },
+    {
+      disabled: true,
+      style: "transparent",
+      class: ["bg-transparent", "hover:bg-transparent", "border-transparent"],
+    },
+  ],
+  defaultVariants: {
+    variant: "secondary",
+    style: "solid",
+  },
+});
+
+const { variant = "secondary", disabled = false, style = "solid", className } = Astro.props;
+---
+
+<button disabled class={cvaButton({ variant, className, style, disabled })}><slot /></button>
